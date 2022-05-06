@@ -1,16 +1,18 @@
 {% extends 'employee/base.html' %}
-
+{% load static %}
 {% block content%}
 
-
-<div class="album py-5 bg-light">
-    <div class="container">
+<svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+<span class="fs-2 ml-200" style="border-radius: 10px; border: 2px solid #1E90FF">Wonder Books!</span>
+<div class="album py-5 " style="background-color:#e3f2fd;">
+    <div class="container" >
         <div class="row">
             {% for employee in index %}
-                <div class="col-md-4">
-                    <div class="card mb-4 box-shadow">
+                <div class="col-md-4" >
+                    <div class="card mb-4 box-shadow " style="box-shadow: 0 0 20px 0px #1E90FF;">
                         <div class="card-body">
-                            <h4 class=""><a href="{{ employee.slug }}">{{ employee.title }}</a></h4>
+                            <h4 class="" style="font-weight: bold; font-style:italic;"><a href="{{ employee.slug }}" style="text-decoration:none;">{{ employee.title }}</a></h4>
+
                             <p class="card-text"></p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="">
@@ -23,6 +25,9 @@
             {% endfor %}
         </div>
     </div>
+</div>
+<div>
+    <p style="text-align:center;">Amount of reviews: {{ index|length }}</p>
 </div>
 
 {% endblock %}

@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-import os, django_heroku
+import os
 
 
 
@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$6dsg52*m72ht!_$6z%6fop)z_+vrqmuxit2crmch7sxd&it7)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['heroku-nuri.herokuapp.com', '127.0.0.1']
 
@@ -121,14 +121,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
+MEDIA_ROOT = os.path.join(BASE_DIR,'static')
+MEDIA_URL = 'media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DEFAULT_FROM_EMAIL = '200103123@stu.sdu.edu.kz'
+DEFAULT_FROM_EMAIL = '200103365@stu.sdu.edu.kz'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -137,5 +140,3 @@ EMAIL_HOST_PASSWORD = 'Nurilka13'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-#Activate Django-Heroku
-django_heroku.settings(locals())

@@ -1,6 +1,7 @@
 {% extends 'employee/base.html' %}
 {% load widget_tweaks %}
 {% block content %}
+{% load static %}
 
 
 <div class="container pt-5">
@@ -19,7 +20,7 @@
         {% endfor %}
         <div class="form-group">
             <button type="submit" class="btn btn-success">
-                <span class="glyphicon glyphicon-ok"></span> Edit
+                <span class="glyphicon glyphicon-ok"></span> Submit
             </button>
             <a href="{% url 'employee:posts' %}" class="btn btn-default">Cancel</a>
         </div>

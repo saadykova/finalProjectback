@@ -10,3 +10,5 @@ class PostForm(forms.ModelForm):
 class EmailForm(forms.Form):
     recipient = forms.EmailField()
     message = forms.CharField(widget=forms.Textarea)
+
+
